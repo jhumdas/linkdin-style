@@ -29,6 +29,6 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
-  ],
+, "app/layout.js", "app/page.js", "app/components/RightSidebar.js", "app/components/Feed.js", "app/components/LeftSidebar.js", "app/components/Header.js"  ],
   "exclude": ["node_modules"]
 }
