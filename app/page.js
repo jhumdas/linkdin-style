@@ -1,34 +1,64 @@
 "use client";
 
-import { Grid, Container } from "@mui/material";
-import Header from "../app/components/Header";
-import LeftSidebar from "../app/components/LeftSidebar";
-import Feed from "../app/components/Feed";
-import RightSidebar from "../app/components/RightSidebar";
+import { Container, Grid, Box } from "@mui/material";
+import Header from "./components/Header";
+import LeftSidebar from "./components/LeftSidebar";
+import Feed from "./components/Feed";
+import RightSidebar from "./components/RightSidebar";
 
-export default function Home() {
+export default function Page() {
   return (
     <>
       <Header />
 
-      <Container maxWidth="lg" sx={{ mt: 4 }}>
-        <Grid container spacing={3}>
-          {/* Left sidebar – hidden on mobile */}
-          <Grid item md={3} display={{ xs: "none", md: "block" }}>
-            <LeftSidebar />
+      <Container maxWidth="xl" sx={{ mt: 2 }}>
+        <Grid
+          container
+          spacing={3}
+          wrap="nowrap"
+        >
+          {/* Left Sidebar */}
+          <Grid
+            item
+            xs={12}
+            md={3}
+            sx={{
+              flexShrink: 0,
+              display: { xs: "none", md: "block" },
+            }}
+          >
+            <Box sx={{ position: "sticky", top: 80 }}>
+              <LeftSidebar />
+            </Box>
           </Grid>
 
           {/* Feed */}
-          <Grid item xs={12} md={6}>
+          <Grid
+            item
+            xs={12}
+            md={6}
+            sx={{
+              minWidth: 0,
+            }}
+          >
             <Feed />
           </Grid>
 
-          {/* Right sidebar – hidden on mobile */}
-          <Grid item md={3} display={{ xs: "none", md: "block" }}>
-            <RightSidebar />
+          {/* Right Sidebar */}
+          <Grid
+            item
+            xs={12}
+            md={3}
+            sx={{
+              flexShrink: 0,
+              display: { xs: "none", md: "block" },
+            }}
+          >
+            <Box sx={{ position: "sticky", top: 80 }}>
+              <RightSidebar />
+            </Box>
           </Grid>
         </Grid>
-
       </Container>
     </>
   );
